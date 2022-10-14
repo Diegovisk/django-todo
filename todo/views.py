@@ -28,3 +28,5 @@ def EditTodo(request, item_id):
 def UpdateTodoItem(request, item_id):
     item_to_update = Item.objects.get(id=item_id)
     item_to_update.content = request.POST['content']
+    item_to_update.save()
+    return HttpResponseRedirect('/')
